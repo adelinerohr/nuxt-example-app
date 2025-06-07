@@ -15,12 +15,14 @@
   },
   "dependencies": {
     "@nuxt/eslint": "1.4.1",
+    "@nuxt/icon": "1.13.0",
     "@tailwindcss/vite": "^4.1.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "eslint": "^9.28.0",
     "lucide-vue-next": "^0.513.0",
     "nuxt": "^3.17.5",
+    "reka-ui": "^2.3.0",
     "shadcn-nuxt": "2.2.0",
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.8",
@@ -30,6 +32,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.14.1",
+    "@iconify-json/tabler": "^1.2.19",
     "eslint-plugin-format": "^1.0.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0"
