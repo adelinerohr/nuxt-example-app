@@ -1,0 +1,11 @@
+import { int, sqliteTable, text } from "drizzle-orm/sqlite-core";
+
+import { job } from "./job";
+
+export const application = sqliteTable("application", {
+  id: int().primaryKey({ autoIncrement: true }),
+  jobId: int().notNull().references(() => job.id),
+  coverLetter: text(),
+  resumeUrl: text(),
+  appliedAt: int().notNull().$default(() => Date.now()),
+});

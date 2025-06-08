@@ -5,7 +5,11 @@
   "packageManager": "pnpm@10.11.1",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "concurrently \"pnpm run dev:db\" \"nuxt dev\"",
+    "dev:db": "turso dev --db-file local.db",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:studio": "drizzle-kit studio",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -14,6 +18,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@libsql/client": "^0.15.8",
     "@nuxt/eslint": "1.4.1",
     "@nuxt/icon": "1.13.0",
     "@nuxtjs/color-mode": "3.5.2",
@@ -21,6 +26,8 @@
     "@vueuse/core": "^13.3.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.44.2",
     "eslint": "^9.28.0",
     "lucide-vue-next": "^0.513.0",
     "nuxt": "^3.17.5",
@@ -36,9 +43,12 @@
   "devDependencies": {
     "@antfu/eslint-config": "^4.14.1",
     "@iconify-json/tabler": "^1.2.19",
+    "concurrently": "^9.1.2",
+    "drizzle-kit": "^0.31.1",
     "eslint-plugin-format": "^1.0.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.0"
+    "lint-staged": "^16.1.0",
+    "tsx": "^4.19.4"
   },
   "lint-staged": {
     "*": "pnpm lint"

@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1749342416968,
+      "tag": "0000_dry_darkstar",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1749348727128,
+      "tag": "0001_wakeful_vector",
+      "breakpoints": true
+    }
+  ]
+}
