@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+const authStore = useAuthStore();
+</script>
+
 <template>
   <div class="container py-44">
     <div class="flex flex-col items-center gap-8">
@@ -14,7 +18,13 @@
       </div>
       <div class="flex gap-4">
         <NuxtLink to="/">
-          <AuthButton />
+          <AuthButton v-if="!authStore.user" />
+          <Button v-else as-child>
+            <NuxtLink to="/dashboard">
+              Go to dashboard
+              <Icon name="tabler:arrow-right" />
+            </NuxtLink>
+          </Button>
         </NuxtLink>
       </div>
     </div>
