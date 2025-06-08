@@ -15,6 +15,13 @@
       "when": 1749348727128,
       "tag": "0001_wakeful_vector",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1749350069245,
+      "tag": "0002_odd_hardball",
+      "breakpoints": true
     }
   ]
 }
