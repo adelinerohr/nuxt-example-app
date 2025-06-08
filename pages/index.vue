@@ -14,7 +14,7 @@
       </div>
       <div class="flex gap-4">
         <NuxtLink to="/">
-          <Button> Get started <Icon name="tabler:arrow-right" /> </Button>
+          <AuthButton />
         </NuxtLink>
       </div>
     </div>

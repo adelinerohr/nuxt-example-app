@@ -6,16 +6,16 @@ export const user = sqliteTable("user", {
   email: text().notNull().unique(),
   emailVerified: integer({ mode: "boolean" }).$defaultFn(() => false).notNull(),
   image: text(),
-  createdAt: integer({ mode: "timestamp" }).$defaultFn(() => /* @__PURE__ */ new Date()).notNull(),
-  updatedAt: integer({ mode: "timestamp" }).$defaultFn(() => /* @__PURE__ */ new Date()).notNull(),
+  createdAt: integer().notNull(),
+  updatedAt: integer().notNull(),
 });
 
 export const session = sqliteTable("session", {
   id: int().primaryKey({ autoIncrement: true }),
-  expiresAt: integer({ mode: "timestamp" }).notNull(),
+  expiresAt: integer().notNull(),
   token: text().notNull().unique(),
-  createdAt: integer({ mode: "timestamp" }).notNull(),
-  updatedAt: integer({ mode: "timestamp" }).notNull(),
+  createdAt: integer().notNull(),
+  updatedAt: integer().notNull(),
   ipAddress: text(),
   userAgent: text(),
   userId: text().notNull().references(() => user.id, { onDelete: "cascade" }),
@@ -29,19 +29,19 @@ export const account = sqliteTable("account", {
   accessToken: text(),
   refreshToken: text(),
   idToken: text(),
-  accessTokenExpiresAt: integer({ mode: "timestamp" }),
-  refreshTokenExpiresAt: integer({ mode: "timestamp" }),
+  accessTokenExpiresAt: integer(),
+  refreshTokenExpiresAt: integer(),
   scope: text(),
   password: text(),
-  createdAt: integer({ mode: "timestamp" }).notNull(),
-  updatedAt: integer({ mode: "timestamp" }).notNull(),
+  createdAt: integer().notNull(),
+  updatedAt: integer().notNull(),
 });
 
 export const verification = sqliteTable("verification", {
   id: int().primaryKey({ autoIncrement: true }),
   identifier: text().notNull(),
   value: text().notNull(),
-  expiresAt: integer({ mode: "timestamp" }).notNull(),
-  createdAt: integer({ mode: "timestamp" }).$defaultFn(() => /* @__PURE__ */ new Date()),
-  updatedAt: integer({ mode: "timestamp" }).$defaultFn(() => /* @__PURE__ */ new Date()),
+  expiresAt: integer().notNull(),
+  createdAt: integer(),
+  updatedAt: integer(),
 });

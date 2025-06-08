@@ -6,7 +6,7 @@
       </NuxtLink>
       <div class="flex items-center gap-4">
         <AppThemeToggle />
-        <Button> Sign in </Button>
+        <AuthButton />
       </div>
     </div>
   </div>
